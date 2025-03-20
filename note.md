@@ -15,6 +15,7 @@ performance del tuo componente. Segui le milestone per migliorare progressivamen
         Breve biografia (biography)
 
 Obiettivo: Caricare e mostrare i politici in un’interfaccia chiara e leggibile.
+
 📌 Milestone 2: Implementare la ricerca ottimizzata
 
     Aggiungi un campo di ricerca (<input type="text">) sopra la lista dei politici.
@@ -22,6 +23,7 @@ Obiettivo: Caricare e mostrare i politici in un’interfaccia chiara e leggibile
     ❌ Non usare useEffect per aggiornare l’array filtrato.
 
 Obiettivo: Migliorare le prestazioni evitando ricalcoli inutili quando il valore della ricerca non cambia.
+
 📌 Milestone 3: Ottimizzare il rendering delle card con React.memo
 
     Attualmente, ogni volta che l’utente digita nella barra di ricerca, tutte le card vengono ri-renderizzate, anche quelle che non sono cambiate.

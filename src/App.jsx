@@ -1,5 +1,22 @@
-import { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import "./App.css";
+
+function Politico({ name, image, position, biography }) {
+	console.log("stampato");
+
+	return (
+		<div className="card my-2 ">
+			<img src={image} className="card-img-top w-25 mt-2 ms-4" alt="politico" />
+			<div className="card-body">
+				<h5 className="card-title">
+					{name} - {position}
+				</h5>
+				<p className="card-text">{biography}</p>
+			</div>
+		</div>
+	);
+}
+const MemoizedPolitician = React.memo(Politico);
 
 function App() {
 	const [politici, setPolitici] = useState([]);
@@ -36,19 +53,7 @@ function App() {
 				/>
 				<div>
 					{politiciFiltrati.map((politico) => (
-						<div key={politico.id} className="card my-2 ">
-							<img
-								src={politico.image}
-								className="card-img-top w-25 mt-2 ms-4"
-								alt="politico"
-							/>
-							<div className="card-body">
-								<h5 className="card-title">
-									{politico.name} - {politico.position}
-								</h5>
-								<p className="card-text">{politico.biography}</p>
-							</div>
-						</div>
+						<MemoizedPolitician key={politico.id} {...politico} />
 					))}
 				</div>
 			</div>
