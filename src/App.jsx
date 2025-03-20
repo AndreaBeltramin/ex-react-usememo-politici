@@ -12,13 +12,17 @@ function App() {
 			.catch((error) => console.error(error));
 	}, []);
 
-	const politiciFiltrati = politici.filter((politico) => {
-		const isInName = politico.name.toLowerCase().includes(search.toLowerCase());
-		const isInBio = politico.biography
-			.toLowerCase()
-			.includes(search.toLocaleLowerCase);
-		return isInName || isInBio;
-	});
+	const politiciFiltrati = useMemo(() => {
+		return politici.filter((politico) => {
+			const isInName = politico.name
+				.toLowerCase()
+				.includes(search.toLowerCase());
+			const isInBio = politico.biography
+				.toLowerCase()
+				.includes(search.toLocaleLowerCase);
+			return isInName || isInBio;
+		});
+	}, [politici, search]);
 
 	return (
 		<>
