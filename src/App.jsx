@@ -24,7 +24,9 @@ function App() {
 								alt="politico"
 							/>
 							<div className="card-body">
-								<h5 className="card-title">{politico.name}</h5>
+								<h5 className="card-title">
+									{politico.name} - {politico.position}
+								</h5>
 								<p className="card-text">{politico.biography}</p>
 							</div>
 						</div>
